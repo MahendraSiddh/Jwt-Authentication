@@ -1,0 +1,23 @@
+package com.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.demo.service.CustomUserDetailsService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+@RestController
+public class HomeController {
+    
+    @Autowired
+    CustomUserDetailsService customUserDetailsService;
+    @GetMapping("/home")
+    public String getHome(HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse)
+    {
+        return "hello jee "+httpServletRequest.getSession().getId();
+    }
+    
+}
