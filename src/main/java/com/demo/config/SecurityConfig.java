@@ -28,7 +28,7 @@ public class SecurityConfig {
                     .csrf(customizer->customizer.disable())
                     .authorizeHttpRequests(request-> request
                                                     .requestMatchers("/register").permitAll()
-                                                    .anyRequest().hasRole("USER"))
+                                                    .anyRequest().authenticated())
                     .httpBasic(Customizer.withDefaults())
                     .sessionManagement(session->
                             session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));

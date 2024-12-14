@@ -17,7 +17,7 @@ public class HomeController {
     @GetMapping("/home")
     public String getHome(HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse)
     {
-        return "hello jee "+httpServletRequest.getSession().getId();
+        return "You have api acsess";
     }
     
 }
