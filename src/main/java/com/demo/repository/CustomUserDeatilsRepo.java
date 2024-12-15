@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.demo.model.CustomUser;
 
 @Repository
-public interface CustomUserDeatilsRepo extends JpaRepository<CustomUser,Integer> {
+public interface CustomUserDeatilsRepo extends JpaRepository<CustomUser,String> {
     
     CustomUser findByUsername(String username);
 }
